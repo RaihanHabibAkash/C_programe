@@ -1,15 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    int n = 6;
+    int n = 5;
     for(int i = 1; i <= n; i++) {
-        char k = 'A' + i - 1;
-
-        for(int j = 1; j <= i; j++) {
-            printf("%c ", k);
+        for(int s = 1; s <= n - i; s++) {
+            printf(" ");
         }
-        if(i == 5) {
-            printf("\n");
+        for(int j = 1; j <= (i * 2) - 1; j++) {
+            printf("*");
         }
         printf("\n");
     }
