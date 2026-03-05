@@ -3,38 +3,38 @@
 int main() {
     int a, b, c;
     scanf(" %d %d %d", &a, &b, &c);
+    int min, max;
 
     // Min
     if(a <= b) {
         if(a <= c) {
-            printf("%d ", a);
+            min = a;
         } else {
-            printf("%d ", c);
+            min = c;
         }
     } else {
         if(b <= c) {
-            printf("%d ", b);
+            min = b;
         } else {
-            printf("%d ", c);
+            min = c;
         }
     }
 
     // Max
     if(a >= b) {
         if(a >= c) {
-            printf("%d ", a);
+            max = a;
         } else {
-            printf("%d ", c);
+            max = c;
         }
     } else {
         if(b >= c) {
-            printf("%d ", b);
+            max = b;
         } else {
-            printf("%d ", c);
+            max = c;
         }
     }
-
-    printf("\n");
+    printf("%d %d", min, max);
 
     return 0;
 }
