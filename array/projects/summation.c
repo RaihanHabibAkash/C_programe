@@ -43,14 +43,16 @@ int main() {
         scanf(" %d", &arr[i]);
     }
 
-    int sum = 0;
+    long long sum = 0;
     for(int i = 0; i < n; i++) {
         sum += arr[i];
     }
     
-    sum *= -1;
+    if(sum < 0) {
+        sum *= -1;
+    }
 
-    printf("%d", sum);
+    printf("%lld", sum);
     
     return 0;
 }
