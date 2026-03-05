@@ -28,10 +28,10 @@ int main() {
         }
     }
 
-    printf("Positive: %d\n", posCounter);
-    printf("Negetive: %d\n", negCounter);    
-    printf("Odd: %d\n", oddCounter);
     printf("Even: %d\n", evenCounter);
+    printf("Odd: %d\n", oddCounter);    
+    printf("Positive: %d\n", posCounter);
+    printf("Negative: %d\n", negCounter);
     
     return 0;
 }
