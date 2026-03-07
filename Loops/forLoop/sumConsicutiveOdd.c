@@ -34,7 +34,7 @@ int main() {
     
     for(int i = 0; i < t; i++) {
         // Sum will freash in every loop
-        long long sum = 0;
+        int sum = 0;
 
         // Taking output to exclusive
         scanf("%d %d", &a, &b);
@@ -57,7 +57,7 @@ int main() {
         }
         
         // Printing the sum
-        printf("%lld\n", sum);
+        printf("%d\n", sum);
     }
 
     return 0;
