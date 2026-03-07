@@ -24,6 +24,7 @@ OutputCopy
 12
 */
 
+// https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/S
 
 // Consicutive => Dharabahik (1, 2, 3, 4).
 #include <stdio.h>
