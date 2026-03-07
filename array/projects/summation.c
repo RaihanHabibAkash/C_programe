@@ -32,6 +32,8 @@ Second Example :
 
 -1 + 2 + -3 = -2 and it absolute is 2 so the answer is 2.
 */
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/A
 #include <stdio.h>
 
 int main() {

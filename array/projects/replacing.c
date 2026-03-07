@@ -21,6 +21,8 @@ InputCopy
 OutputCopy
 1 2 0 1 1 
 */
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/C
 #include <stdio.h>
 
 int main() {

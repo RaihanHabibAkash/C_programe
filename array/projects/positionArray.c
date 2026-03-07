@@ -23,6 +23,8 @@ A[0] = 1
 A[1] = 2
 A[3] = 0
 */
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/D
 #include <stdio.h>
 
 int main() {

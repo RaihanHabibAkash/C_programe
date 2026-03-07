@@ -1,4 +1,7 @@
 /*
+I. Lucky Numbers
+time limit per test1 second
+memory limit per test256 megabytes
 A number of two digits is lucky if one of its digits is divisible by the other.
 
 For example, 39, 82, and 55 are lucky, while 79 and 43 are not.
@@ -12,7 +15,19 @@ Only one line containing a single number N
 
 Output
 Print "YES" if the given number is lucky, otherwise print "NO".
+
+Examples
+InputCopy
+39
+OutputCopy
+YES
+InputCopy
+64
+OutputCopy
+NO
 */
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/I
 
 #include <stdio.h>
 
