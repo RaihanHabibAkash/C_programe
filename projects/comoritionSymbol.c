@@ -28,6 +28,8 @@ InputCopy
 OutputCopy
 Right
 */
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/V
 #include <stdio.h>
 
 int main() {
