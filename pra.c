@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 int main() {
-    int n;
-    scanf(" %d", &n);
-
-    int k = n % 4;
-    printf("%d", k);
+    int n = 44;
+    n /= 10;
+    printf("%d", n);
     
     return 0;
 }
