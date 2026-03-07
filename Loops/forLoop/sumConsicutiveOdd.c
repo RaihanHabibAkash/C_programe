@@ -32,8 +32,6 @@ int main() {
     int t, a, b;
     scanf("%d", &t);
     
-    
-
     for(int i = 0; i < t; i++) {
         // Sum will freash in every loop
         long long sum = 0;
