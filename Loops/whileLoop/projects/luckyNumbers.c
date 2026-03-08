@@ -39,55 +39,35 @@ OutputCopy
 // https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/M
 
 #include <stdio.h>
-#include <stdbool.h>
 
 int main() {
     int a, b;
     scanf("%d %d", &a, &b);
-    bool found = false;
 
-    if(a < b) {
-        for(int i = a; i <= b; i++) {
-            int temp = i;
-            bool lucky = true;
+    int isLucky = 0;
 
-            while(temp > 0) {
-                if(temp % 10 == 4 || temp % 10 == 7) {
-                    temp /= 10;
-                } else {
-                    lucky = false;
-                    break;
-                }
-            }
-            // Lucky number print
-            if(lucky == true) {
-                printf("%d ", i);
-                found = true;
+    for(int i = a; i <= b; i++) {
+        int temp = i;
+        int lucky = 1;
+
+        // Checking lucky or not
+        while(temp > 0) {
+            if(temp % 10 == 4 || temp % 10 == 7) {
+                temp /= 10;
+            } else {
+                lucky = 0;
+                break;
             }
         }
 
-    } else if(b < a) {
-        for(int i = b; i <= a; i++) {
-            int temp = i;
-            bool lucky = true;
-
-            while(temp > 0) {
-                if(temp % 10 == 4 || temp % 10 == 7) {
-                    temp /= 10;
-                } else {
-                    lucky = false;
-                    break;
-                }
-            }
-
-            if(lucky == true) {
-                printf("%d ", i);
-                found = true;
-            }
+        // printing lucky and checking there is an lucky number
+        if(lucky == 1) {
+            printf("%d ", i);
+            isLucky = 1;
         }
     }
 
-    if(found == false) {
+    if(isLucky == 0) {
         printf("-1");
     }
     
