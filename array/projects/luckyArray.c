@@ -38,21 +38,22 @@ minimum element is 3 and its frequency is 4 and it's EVEN so the array is not lu
 // https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/J
 
 #include <stdio.h>
-#include <limits.h>
 
 int main() {
     int n;
-    scanf(" %d", &n);
+    scanf("%d", &n);
     
     int arr[n];
-
-    // Var for min
-    int min = arr[0];
 
     // Inserting value in array
     for(int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
+    }
 
+    // Var for min
+    int min = arr[0];
+
+    for(int i = 0; i < n; i++) {
         // Check min
         if(arr[i] < min) {
             min = arr[i];
