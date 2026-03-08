@@ -42,25 +42,32 @@ Second Example :
 
 // https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/H
 #include <stdio.h>
-#include <stdbool.h>
 
 int main() {
-    int n;
-    bool isPrime = true;
-    
-    scanf("%d", &n);
-    if(n == 1) {
-        printf("NO");
-    }
+    int x;
+    scanf(" %d", &x);
+    int isLucky = 1;
 
-    for(int i = 2; i < n; i++) {
-        if(n % i == 0) {
-            isPrime = false;
-            break;
+    if(x == 2 || x == 3) {
+        isLucky = 1;
+    } else {
+        // Lucky number is only devided by itself
+        int temp = x - 1;
+
+        while(temp > 1) {
+            
+            // Checking if it's not lucky
+            if(x % temp == 0) {
+                isLucky = 0;
+                break;
+            // if lucky dont change the var
+            } else {
+                --temp;
+            }
         }
     }
 
-    if(isPrime == true) {
+    if(isLucky == 1) {
         printf("YES\n");
     } else {
         printf("NO\n");
