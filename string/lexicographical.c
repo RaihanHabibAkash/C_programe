@@ -55,14 +55,14 @@ int main() {
         // Checking characters
         for(int i = 0; i < index1; i++) {
             if(str1[i] < str2[i]) {
-                smallIndex = index1;
+                smallIndex = 2;
                 break;
             } else if(str2[i] < str1[i]) {
-                smallIndex = index2;
+                smallIndex = 3;
                 break;
             } else {
-                // Both are eqal
-                smallIndex = 1;
+                // Both are eqal but a length small
+                smallIndex = 2;
             }
         }
 
@@ -71,14 +71,14 @@ int main() {
         // Checking characters
         for(int i = 0; i < index2; i++) {
             if(str1[i] < str2[i]) {
-                smallIndex = index1;
+                smallIndex = 2;
                 break;
             } else if(str2[i] < str1[i]) {
-                smallIndex = index2;
+                smallIndex = 3;
                 break;
             } else {
-                // Both are eqal
-                smallIndex = 1;
+                // Both are eqal but b length small
+                smallIndex = 3;
             }
         }
 
@@ -87,10 +87,10 @@ int main() {
         // Checking characters
         for(int i = 0; i < index1; i++) {
             if(str1[i] < str2[i]) {
-                smallIndex = index1;
+                smallIndex = 2;
                 break;
             } else if(str2[i] < str1[i]) {
-                smallIndex = index2;
+                smallIndex = 3;
                 break;
             } else {
                 // Both are eqal
@@ -101,9 +101,9 @@ int main() {
 
 
     // Cheking which string is less
-    if(smallIndex == index1) {
+    if(smallIndex == 2) {
         printf("%s\n%s", str1, str2);
-    } else if(smallIndex == index2) {
+    } else if(smallIndex == 3) {
         printf("%s\n%s\n", str2, str1);
     } else if(smallIndex == 1) {
         printf("%s == %s\n", str1, str2);
