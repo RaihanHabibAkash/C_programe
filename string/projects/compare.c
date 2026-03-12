@@ -26,27 +26,92 @@ For more information visit Lexicographical order: https://en.wikipedia.org/wiki/
 
 // https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/C
 
+// #include <stdio.h>
+// #include <string.h>
+
+// int main() {
+//     char x[30], y[30];
+//     fgets(x, sizeof(x), stdin);
+//     fgets(y, sizeof(y), stdin);
+
+//     int compare = strcmp(x, y);
+
+//     // x < y
+//     if(compare < 0) {
+//         fputs(x, stdout);
+    
+//     // y < x
+//     } else if(compare > 0) {
+//         fputs(y, stdout);
+    
+//     // x == y
+//     } else {
+//         fputs(x, stdout);
+//     }
+
+//     return 0;
+// }
+
+
 #include <stdio.h>
 #include <string.h>
 
 int main() {
     char x[30], y[30];
-    fgets(x, sizeof(x), stdin);
-    fgets(y, sizeof(y), stdin);
+    scanf("%s %[^\n]s", x, y);
 
-    int compare = strcmp(x, y);
+    int xLen = strlen(x);
+    int yLen = strlen(y);
+    
+    // x > y Length wise
+    if(xLen > yLen) {
+        for(int i = 0; y[i] != '\0'; i++) {
+            if(x[i] < y[i]) {
+                // x < y
+                printf("%s\n", x);
+                return 0;
+            } else if(x[i] > y[i]) {
+                // x > y
+                printf("%s\n", y);
+                return 0;
+            }
+        }
 
-    // x < y
-    if(compare < 0) {
-        fputs(x, stdout);
+        // x == y till now, now length is fact so y < x
+        printf("%s\n", y);
     
-    // y < x
-    } else if(compare > 0) {
-        fputs(y, stdout);
-    
-    // x == y
+    // x < y Length wise
+    } else if (xLen < yLen) {
+        for(int i = 0; x[i] != '\0'; i++) {
+            if(x[i] < y[i]) {
+                // x < y
+                printf("%s\n", x);
+                return 0;
+            } else if(x[i] > y[i]) {
+                // x > y
+                printf("%s\n", y);
+                return 0;
+            }
+        }
+
+        // x == y till now, now length is fact so x < y
+        printf("%s\n", x);
+
     } else {
-        fputs(x, stdout);
+        for(int i = 0; x[i] != '\0'; i++) {
+            if(x[i] < y[i]) {
+                // x < y
+                printf("%s\n", x);
+                return 0;
+            } else if(x[i] > y[i]) {
+                // x > y
+                printf("%s\n", y);
+                return 0;
+            }
+        }
+
+        // x == y till now, now length is fact so x == y
+        printf("%s", x);
     }
 
     return 0;
