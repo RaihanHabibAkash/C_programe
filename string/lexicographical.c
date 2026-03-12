@@ -28,86 +28,27 @@
 #include <stdio.h>
 
 int main() {
-    char str1[20], str2[20];
+    // Taking how many words i want to compare
+    int n;
+    printf("How many words you want to compare\n");
+    scanf("%d", &n);
 
-    // Taking inputs
-    scanf("%s", str1);
-    scanf("%s", str2);
+    // For Multiple string
+    char str[n][50];
 
-    // Length of the first string
-    int index1 = 0;
-    while(str1[index1] != '\0') {
-        // For while loop
-        ++index1;
+    // Taking inputs of n
+    printf("Give me %d string to compare\n", n);
+    for(int i = 0; i < n; i++) {
+        scanf("%s", str[i]);
     }
 
-    // Length of the second string
-    int index2 = 0;
-    while(str2[index2] != '\0') {
-        // For while loop
-        ++index2;
-    }
+    // Comapreing
+    for(int i = 0; i < n; i++) {
+        for(int j = i; j < n; j++) {
+            
 
-    int smallIndex = 0;
+            // Not done yet
 
-    // First element length is less
-    if(index1 < index2) {
-        // Checking characters
-        for(int i = 0; i < index1; i++) {
-            if(str1[i] < str2[i]) {
-                smallIndex = 2;
-                break;
-            } else if(str2[i] < str1[i]) {
-                smallIndex = 3;
-                break;
-            } else {
-                // Both are eqal but a length small
-                smallIndex = 2;
-            }
-        }
-
-    // Second element length is less
-    } else if(index1 > index2) {
-        // Checking characters
-        for(int i = 0; i < index2; i++) {
-            if(str1[i] < str2[i]) {
-                smallIndex = 2;
-                break;
-            } else if(str2[i] < str1[i]) {
-                smallIndex = 3;
-                break;
-            } else {
-                // Both are eqal but b length small
-                smallIndex = 3;
-            }
-        }
-
-    // First lenght == Second length
-    } else {
-        // Checking characters
-        for(int i = 0; i < index1; i++) {
-            if(str1[i] < str2[i]) {
-                smallIndex = 2;
-                break;
-            } else if(str2[i] < str1[i]) {
-                smallIndex = 3;
-                break;
-            } else {
-                // Both are eqal
-                smallIndex = 1;
-            }
         }
     }
-
-
-    // Cheking which string is less
-    if(smallIndex == 2) {
-        printf("%s\n%s", str1, str2);
-    } else if(smallIndex == 3) {
-        printf("%s\n%s\n", str2, str1);
-    } else if(smallIndex == 1) {
-        printf("%s == %s\n", str1, str2);
-    }
-
-    return 0;
 }
