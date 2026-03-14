@@ -38,3 +38,36 @@ int main() {
 
     return 0;
 }
+
+// #include <stdio.h>
+
+// int main() {
+//     // Length of the array
+//     int len;
+//     scanf(" %d", &len);
+
+//     // Inserting in the array
+//     int arr[len + 5];
+//     for(int i = 0; i < len; i++) {
+//         scanf(" %d", &arr[i]);
+//     }
+
+//     // Declearing freq array
+//     int freq[10000] = {0};
+
+//     // Inserting array value in freq
+//     for(int i = 0; i < len; i++) {
+//         freq[arr[i]] = 1;
+//     }
+
+//     // Checking freq array
+//     for(int i = 0; i < 20; i++) {
+//         if(freq[i] == 1) {
+//             printf("%d Ache\n", i);
+//         } else {
+//             printf("%d Nai\n", i);
+//         }
+//     }
+
+//     return 0;
+// }
