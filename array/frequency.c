@@ -19,7 +19,7 @@ int main() {
         freq[arr[i]] = 1;
     }
 
-    // taking m times inputs
+    // taking m times for inputs
     int m;
     printf("How many times you want check\n");
     scanf(" %d", &m);
