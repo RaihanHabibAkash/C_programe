@@ -1,20 +1,33 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    int n, m;
-    scanf(" %d %d", &n, &m);
-
-    int freq[100005];
-
-    int arr[n + 5];
-    for(int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-        freq[arr[i]]++;
+    int *arr = (int *)calloc(10, sizeof(int));
+    for(int i = 0; i < 10; i++) {
+        arr[i] = i + 100;
     }
 
-    for(int i = 1; i <= m; i++) {
-        printf("%d\n", freq[i]);
+    for(int i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
     }
+    printf("\n");
+
+    int *temp = (int *)realloc(arr, 5 * sizeof(int));
+
+    if(temp == NULL) {
+        printf("realloc failed\n");
+        free(arr);
+        return 1;
+    }
+
+    arr = temp;
+
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    free(arr);
+
 
     return 0;
 }
