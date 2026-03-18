@@ -44,7 +44,6 @@ int main() {
         return 1;
     }
     
-
     // Inserting value in array
     for(int i = 0; i < 10; i++) {
         // (&) not need beacuse (arr + i) is pointing a location
