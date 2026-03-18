@@ -55,7 +55,7 @@ int main() {
         return 1;
     }
 
-    // Resizing of array
+    // Resizing of array, hudai not need
     int *temp = (int *)realloc(arr, *x * sizeof(int));
 
     // If realloc failed and give NULL, return out of function and dealocation
