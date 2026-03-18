@@ -39,50 +39,57 @@ Second Example :
 #include <stdlib.h>
 
 int main() {
-    // Taking input
-    int a;
-    scanf("%d", &a);
+    // Taking input of length
+    int length;
+    scanf("%d", &length);
 
     // Converting into pointer
-    int *x = &a;
+    int *x = &length;
 
-    // Decleared array
+    // Alocating memroy for an array
     int *arr = (int *)calloc(*x, sizeof(int));
 
-    // Hudai Resizing it
+    // Memeroy allocation failed of calloc, return out of the programe
+    if(arr == NULL) {
+        printf("calloc failed\n");
+        return 1;
+    }
+
+    // Resizing of array
     int *temp = (int *)realloc(arr, *x * sizeof(int));
 
-    // If realloc fail return out of the function
+    // If realloc failed and give NULL, return out of function and dealocation
     if(temp == NULL) {
-        printf("realloc failed\n");
+        printf("Error while realloc\n");
         free(arr);
         return 1;
     }
 
-    // If no error temp == arr
+    // If success arr == temp
     arr = temp;
 
-    // Inserting value
+    // Inserting value in array
     for(int i = 0; i < *x; i++) {
+        // (&) not need because it's pointer of a location
         scanf("%d", (arr + i)); 
     }
 
-    // Sumation
+    // Sum of the value in array
     long long sum = 0;
     for(int i = 0; i < *x; i++) {
         sum += *(arr + i);
     }
 
-    // Abulute sum
+    // Absulute summation
     if(sum < 0) {
         sum *= -1;
     }
 
-    // Printing
+    // Printing sum
     printf("%lld", sum);
 
+    // Dealocation of memory of array 
     free(arr);
-
 
     return 0;
 }
