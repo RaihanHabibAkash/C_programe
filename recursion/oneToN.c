@@ -7,9 +7,9 @@ void rec(int x, int n) {
 
     printf("%d\n", x);
 
-    printf("Before function call, Current X = %d\n", x);
+    printf("Before function call, Current X = %d, %p\n", x, &x);
     rec(x + 1, n);
-    printf("After function call, current X = %d\n", x);
+    printf("After function call, current X = %d, %p\n", x, &x);
 }
 
 int main() {
