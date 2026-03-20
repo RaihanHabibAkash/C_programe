@@ -27,14 +27,14 @@ I love Recursion
 
 #include <stdio.h>
 
-void rec(int i, int x) {
+void rec(int i) {
 
     // Base case
-    if(x == i) return;
+    if(i == 0) return;
 
-    printf("I Love Recurtion\n");
+    printf("I love Recursion\n");
 
-    rec(i + 1, x);
+    rec(i - 1);
 }
 
 int main() {
@@ -42,7 +42,7 @@ int main() {
     int n;
     scanf("%d", &n);
 
-    rec(0, n);
+    rec(n);
 
     return 0;
 }
