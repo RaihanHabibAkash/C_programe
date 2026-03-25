@@ -1,33 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
+
+int func(int a[], int i, int n) {
+    if(i == n) {
+        return 0;
+    }
+
+    printf("%d\n", *(a + i));
+    return *(a + i) + func(a, i + 1, n);
+}
 
 int main() {
-    int *arr = (int *)calloc(10, sizeof(int));
-    for(int i = 0; i < 10; i++) {
-        arr[i] = i + 100;
+    int length;
+    scanf("%d", &length);
+
+    int arr[length];
+
+    for(int i = 0; i < length; i++) {
+        scanf("%d", (arr + i));
     }
 
-    for(int i = 0; i < 10; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    int *temp = (int *)realloc(arr, 5 * sizeof(int));
-
-    if(temp == NULL) {
-        printf("realloc failed\n");
-        free(arr);
-        return 1;
-    }
-
-    arr = temp;
-
-    for(int i = 0; i < 5; i++) {
-        printf("%d ", arr[i]);
-    }
-
-    free(arr);
-
+    int res = func(arr, 0 ,length);
+    printf("%d", res);
 
     return 0;
 }

@@ -49,11 +49,9 @@ int sumOfArray(int i, int n) {
         return 0;
     }
 
-    int result = arr[i] + sumOfArray(i + 1, n);
-
-    printf("index(%d, %d) => %d + %d = %d\n", i, i + 1, arr[i], arr[i + 1], result);
-
-    return result;
+    printf("index(%d, %d) => %d + %d = %d\n", i, i + 1, arr[i], arr[i + 1], arr[i] + arr[i + 1]);
+    
+    return arr[i] + sumOfArray(i + 1, n);
 }
 
 int main() {
