@@ -32,12 +32,11 @@ OutputCopy
 
 void printDigit(int x) {
     // base case
-    if(x == 0) {
-        return;
-    }
+    if(x == 0) return;
 
     int digit = x % 10;
 
+    // Recurtion
     printDigit(x / 10);
 
     printf("%d ", digit);
@@ -53,11 +52,10 @@ int main() {
         int number;
         scanf("%d", &number);
 
-        if(number == 0) {
-            printf("0");
-        } else {
-            printDigit(number);
-        }
+        // If the number is 0 print 0 and next
+        if(number == 0) printf("0");
+        // Else send the number to the function
+        else printDigit(number);
         
         printf("\n");
     }
