@@ -1,26 +1,20 @@
 #include <stdio.h>
 
-int func(int a[], int i, int n) {
-    if(i == n) {
-        return 0;
-    }
-
-    printf("%d\n", *(a + i));
-    return *(a + i) + func(a, i + 1, n);
+int isPalin(int *a, int i, int j) {
+    if(i > j) return 0;
+    
+    return a[i] != a[j] || isPalin(a, i + 1, j - 1);
 }
 
 int main() {
-    int length;
-    scanf("%d", &length);
-
-    int arr[length];
-
-    for(int i = 0; i < length; i++) {
-        scanf("%d", (arr + i));
+    int len;
+    scanf("%d", &len);
+    int arr[len];
+    for(int i = 0; i < len; i++) {
+        scanf("%d", &arr[i]);
     }
 
-    int res = func(arr, 0 ,length);
+    int res = isPalin(arr, 0, len - 1);
     printf("%d", res);
-
     return 0;
 }
