@@ -36,49 +36,87 @@ OutputCopy
 
 // https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/N
 
+// #include <stdio.h>
+
+// void shiftZeros(int a[], int length) {
+//     int arrZeors[length];
+//     int arrNumbers[length];
+
+//     int zI = 0;
+//     int nI = 0;
+
+//     // Searching value
+//     for(int i = 0; i < length; i++) {
+//         if(a[i] == 0) {
+//             arrZeors[zI++] = a[i];        
+//         } else {
+//             arrNumbers[nI++] = a[i];
+//         }
+//     }
+
+//     // Inserting in array
+//     int index = 0;
+//     for(int i = 0; i < nI; i++) {
+//         a[index++] = arrNumbers[i];
+//     }
+//     for(int i = 0; i < zI; i++) {
+//         a[index++] = arrZeors[i];
+//     }
+
+// }
+
+// int main() {
+//     // Taking input of lenght
+//     int len;
+//     scanf("%d", &len);
+
+//     // Inserting value for array
+//     int arr[len + 1];
+//     for(int i = 0; i < len; i++) {
+//         scanf("%d", &arr[i]);
+//     }
+
+//     shiftZeros(arr, len);
+
+//     // Printing
+//     for(int i = 0; i < len; i++) {
+//         printf("%d ", arr[i]);
+//     }
+
+//     return 0;
+// }
+
 #include <stdio.h>
 
-void shiftZeros(int a[], int length) {
-    int arrZeors[length];
-    int arrNumbers[length];
+void shiftZeros(int *a, int i, int j) {
+    if(i >= j) return;
 
-    int zI = 0;
-    int nI = 0;
+    if(*(a + i) == 0) {
+        int temp = a[i];
 
-    // Searching value
-    for(int i = 0; i < length; i++) {
-        if(a[i] == 0) {
-            arrZeors[zI++] = a[i];        
-        } else {
-            arrNumbers[nI++] = a[i];
+        for(int k = i; k < j - 1; k++) {
+            a[k] = a[k + 1];
         }
+        a[j - 1] = temp;
+        
+        shiftZeros(a, i, j - 1);
+    } else {
+        shiftZeros(a, i + 1, j);
     }
-
-    // Inserting in array
-    int index = 0;
-    for(int i = 0; i < nI; i++) {
-        a[index++] = arrNumbers[i];
-    }
-    for(int i = 0; i < zI; i++) {
-        a[index++] = arrZeors[i];
-    }
-
 }
 
 int main() {
-    // Taking input of lenght
     int len;
     scanf("%d", &len);
 
-    // Inserting value for array
     int arr[len + 1];
+
     for(int i = 0; i < len; i++) {
         scanf("%d", &arr[i]);
     }
 
-    shiftZeros(arr, len);
+    shiftZeros(arr, 0, len);
 
-    // Printing
     for(int i = 0; i < len; i++) {
         printf("%d ", arr[i]);
     }
