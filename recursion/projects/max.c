@@ -27,31 +27,31 @@ OutputCopy
 #include <stdio.h>
 #include <limits.h>
 
-int findMax(int a[], int i, int j) {
+int findMax(int *a, int i, int j) {
+    if(i == j) {
+        return INT_MIN;
+    }
 
-    if(i == j) return INT_MIN;
-    
-    // Recurtion
     int result = findMax(a, i + 1, j);
 
     if(a[i] > result) return a[i];
-    else return result; 
-}
+    else return result;
+} 
 
 int main() {
-    // Taking input
-    int length;
-    scanf(" %d", &length);
+    // Taking input for lenth of array
+    int len;
+    scanf(" %d", &len);
 
-    // Inserting value in array
-    int arr[length];
-    for(int i = 0; i < length; i++) {
-        scanf(" %d", &arr[i]);
+    // Taking input of array
+    int arr[len];
+    for(int i = 0; i < len; i++) {
+        scanf(" %d", (arr + i));
     }
 
-    int res = findMax(arr, 0, length);
+    int res = findMax(arr, 0, len);
 
-    printf("%d", res);
+    printf("%d\n", res);
 
     return 0;
 }
