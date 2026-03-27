@@ -27,42 +27,31 @@ OutputCopy
 #include <stdio.h>
 #include <string.h>
 
-int checkVowel(char c) {
-    if(c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'i' ||
-         c == 'I' || c == 'o' || c == 'O' || c == 'u' || c == 'U') {
-        return 1;
-    } else return 0;
+int checkVowels(char c) {
+    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
+    || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
 }
 
-int countVowel(char s[], int i, int j) {
-    int count = 0;
-    // base case
-    if(i == j) {
-        return 0;
-    }
-
-    char charater = s[i];
-    int res = checkVowel(charater);
-
-    if(res == 1) {
-        count = 1;
-    } else {
-        count = 0;
-    }
-
-    return count + countVowel(s, i + 1, j);
+int countVowels(char l[], int i, int j) {
+    if(i == j) return 0;
+    
+    if(checkVowels(l[i])) return 1 + countVowels(l, i + 1, j);
+    else return 0 + countVowels(l, i + 1, j);
 }
 
 int main() {
-    char str[250];
-    scanf("%[^\n]s", str);
+    // Taking input of strintg
+    char lekha[220];
+    scanf("%[^\n]s", lekha);
 
-    int len = strlen(str);
+    // length of the string
+    int len = strlen(lekha);
 
+    // Sending in recurtion
+    int count = countVowels(lekha, 0, len);
 
-    int result  = countVowel(str, 0, len);
-
-    printf("%d", result);
+    // Printing
+    printf("%d\n", count);
 
     return 0;
 }
