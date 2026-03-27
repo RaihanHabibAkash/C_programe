@@ -51,8 +51,8 @@ long long dividedBy(long long *num, int *x, int *y, int *z) {
         if(*num % *y == 0) {
             *num /= *y;
             if(*num % *z == 0) {
-                *num /= *z;
-                return *num;
+                return *num /= *z;
+                
 
             } else return -1;
         } else return -1;
