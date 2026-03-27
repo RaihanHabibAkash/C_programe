@@ -58,10 +58,14 @@ int main() {
     scanf(" %d", &cs);
 
     while(cs--) {
+        // Taking number
         int number;
         scanf(" %d", &number);
 
+        // Sending to function
         shape(1, number);
+
+        // New line after the function complete 
         printf("\n");
     }
 
