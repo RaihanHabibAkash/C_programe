@@ -31,7 +31,7 @@ OutputCopy
 
 int main() {
     int n,
-        k = 0;
+    k = 0;
     scanf(" %d", &n);
 
     for(int i = 1; i <= n; i++) {
