@@ -25,7 +25,29 @@ A[3] = 0
 */
 
 // https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/D
+#include <stdio.h>
 
+int main() {
+    int n;
+    scanf(" %d", &n);
+
+    // Inserting value
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        scanf(" %d", &arr[i]);
+    }
+    
+    // Cheking if the value is less than 10
+    for(int i = 0; i < n; i++) {
+        if(arr[i] <= 10) {
+            printf("A[%d] = %d\n", i, arr[i]);
+        }
+    }
+
+    return 0;
+}
+
+/*
 #include <stdio.h>
 
 int main() {
@@ -47,3 +69,4 @@ int main() {
     }
     return 0;
 }
+*/
