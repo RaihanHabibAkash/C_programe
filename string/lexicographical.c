@@ -26,29 +26,27 @@
 // }
 
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    // Taking how many words i want to compare
     int n;
     printf("How many words you want to compare\n");
     scanf("%d", &n);
 
-    // For Multiple string
     char str[n][50];
 
-    // Taking inputs of n
-    printf("Give me %d string to compare\n", n);
+    printf("Give me %d strings to compare\n", n);
     for(int i = 0; i < n; i++) {
         scanf("%s", str[i]);
     }
 
-    // Comapreing
+    // Comparing strings
     for(int i = 0; i < n; i++) {
-        for(int j = i; j < n; j++) {
-            
-
-            // Not done yet
-
+        for(int j = i + 1; j < n; j++) {
+            if(strcmp(str[i], str[j]) == 0) printf("'%s' and '%s' are equal\n", str[i], str[j]);
+            else printf("'%s' and '%s' are not equal\n", str[i], str[j]);
         }
     }
+
+    return 0;
 }
